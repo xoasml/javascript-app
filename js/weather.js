@@ -1,4 +1,6 @@
-const weather = document.querySelector(".js-weather");
+const homeLocation = document.querySelector(".js-weather__home");
+const homeTemperature = document.querySelector(".js-weather__temp");
+const homeNatuer = document.querySelector(".js-weather__natuer");
 
 const API_KEY = "8edca8d726a0e5847226ed412605b8b4";
 const COORDS = "coords";
@@ -14,8 +16,10 @@ function getWeather(lat, lon) {
       const temperature = json.main.temp;
       const plaece = json.name;
       const nature = json.weather[0].main;
-      weather.innerText = `${temperature} ${plaece} ${nature}`;
-      console.log(json);
+
+      homeLocation.innerText = plaece;
+      homeTemperature.innerText = temperature;
+      homeNatuer.innerText = nature;
     });
 }
 
@@ -56,5 +60,6 @@ function loadCoords() {
 
 function init() {
   loadCoords();
+  setInterval(loadCoords, 3600000); // 한시간마다 날씨 정보 갱신
 }
 init();

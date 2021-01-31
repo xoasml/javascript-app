@@ -1,0 +1,11 @@
+.weather {
+  height: 150px;
+  margin: 15px 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weather__area {
+  margin-bottom: 10px;
+  text-align: right;
+}

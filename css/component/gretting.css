@@ -1,0 +1,57 @@
+.greetings__base {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.form,
+.greetings {
+  display: none;
+  text-align: center;
+}
+
+.greetings__reply {
+  margin: 0px 3px;
+  display: none;
+  font-size: 5px;
+  color: tomato;
+}
+
+.showing {
+  display: block;
+}
+
+.form > input {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(240, 248, 255, 1);
+  text-shadow: 1px 1px 10px #000;
+  text-align: center;
+  font-size: 40px;
+  width: 400px;
+  padding-bottom: 5px;
+}
+
+.form > input::placeholder {
+  color: rgba(240, 248, 255, 1);
+  text-shadow: 1px 1px 10px #000;
+}
+
+.greetings {
+  font-size: 30px;
+}
+
+@keyframes rollingBtnAnimation {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.greetings__reply:hover {
+  cursor: pointer;
+  animation: rollingBtnAnimation 1s ease-in-out infinite;
+}

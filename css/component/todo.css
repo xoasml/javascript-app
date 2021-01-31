@@ -1,0 +1,74 @@
+.todo-base {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-base > form > input {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid white;
+  color: rgba(240, 248, 255, 1);
+  text-shadow: 1px 1px 10px #000;
+  width: 200px;
+  margin-bottom: 50px;
+  padding-bottom: 5px;
+}
+
+.todo-base > form > input::placeholder {
+  color: rgba(240, 248, 255, 1);
+  text-shadow: 1px 1px 10px #000;
+}
+
+.todo-ul {
+  width: 300px;
+}
+
+.todo-ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-ul li button {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.todo-ul li span {
+  font-size: 25px;
+}
+
+.todo-ul li button:active,
+.todo-ul li button:focus {
+  outline: none;
+}
+
+@keyframes delHoverAni {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(0.5px);
+  }
+
+  75% {
+    transform: translateX(-0.5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.todo-ul li button:hover,
+.todo-ul li button:hover + span {
+  cursor: pointer;
+  animation: delHoverAni 0.2s ease-in-out infinite;
+}
