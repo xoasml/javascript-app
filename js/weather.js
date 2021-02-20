@@ -7,15 +7,17 @@ const COORDS = "coords";
 
 function getWeather(lat, lon) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    // `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=1&appid=${API_KEY}&units=metric`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
-      const temperature = json.main.temp;
-      const plaece = json.name;
-      const nature = json.weather[0].main;
+      console.log(json);
+      const temperature = json.list[0].main.temp;
+      const plaece = json.list[0].name;
+      const nature = json.list[0].weather[0].main;
 
       homeLocation.innerText = plaece;
       homeTemperature.innerText = temperature;
